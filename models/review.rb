@@ -2,8 +2,7 @@ class Review < ActiveRecord::Base
   belongs_to :user
   has_many :photos, as: :photoable
 
-  validates :rating, presence: true,
-    numericality: true, inclusion: { in: 0.0..10.0 }
+  validates :rating, presence: true, inclusion: { in: 0.0..10.0 }
   validates :product, presence: true
   validate :must_be_non_reviewed, if: :product_changed?
 
