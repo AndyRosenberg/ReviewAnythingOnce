@@ -21,9 +21,9 @@
 
                   <div>
                     <label for="rating" class="label has-text-white">Rating</label>
-                    <input class="input" name="rating" type="number" v-model="rating" min="0.0" max="10.0" step=".1">
+                    <input class="input" name="rating" type="number" v-model="rating" min="0.0" max="10.0" step=".1" @change="ensureFloat">
                     <input class="slider is-fullwidth is-large is-primary is-circle" v-model="rating" step=".1"
-                      min="0.0" max="10.0" value="5.0" type="range">
+                      min="0.0" max="10.0" value="5.0" type="range" @change="ensureFloat">
                   </div>
 
                   <div class="field">
@@ -94,15 +94,28 @@
       return {
         csrf: document.querySelector('meta[name=_csrf]').content,
         product: '',
-        rating: 5.0,
+        rating: "5.0",
         hasImage: false,
         fileBody: '',
         fileName: '',
+        fileBodyFull: '',
       };
     },
     methods: {
       checkIfReviewed() {
         console.log(this.product)
+      },
+
+      ensureFloat() {
+        let newRating = parseFloat(this.rating).toFixed(1);
+        
+        if (newRating === "NaN" || newRating <= 0) {
+          this.rating = "0.0"
+        } else if (newRating > 10) {
+          this.rating = "10.0"
+        } else {
+          this.rating = newRating.toString();
+        }
       },
 
       setImage(file) {
@@ -111,10 +124,6 @@
         this.fileBody = this.fileBodyFull.split("base64,")[1]
         this.fileName = (file['info'] || {})['name'];
       },
-
-      // updateRating(val) {
-      //   this.rating = Number(val)
-      // }
     }
   }
 </script>

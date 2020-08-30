@@ -7,6 +7,7 @@ require 'sidekiq'
 require 'sidekiq/web'
 require 'erubi'
 require 'sinatra/activerecord'
+require 'aws-sdk-s3'
 require_relative 'roda_ext'
 
 def dirload(dir)

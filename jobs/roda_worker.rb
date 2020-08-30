@@ -1,7 +1,7 @@
 require_relative 'config/mail_config'
 require_relative 'config/sidekiq_config'
 
-class MailWorker
+class RodaWorker
   include Sidekiq::Worker
 
   def self.perform_async_in_prod(*args)

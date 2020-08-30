@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :reviews
+  has_many :photos, as: :photoable
   
   validates :name, uniqueness: { case_sensitive: false }
   validates :email, uniqueness: { case_sensitive: false }

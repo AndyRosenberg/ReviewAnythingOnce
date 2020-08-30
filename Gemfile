@@ -6,6 +6,7 @@ gem "roda"
 gem 'agoo'
 gem 'argon2'
 gem "sinatra-activerecord"
+gem 'aws-sdk-s3', '~> 1'
 gem "pg"
 gem "rake"
 gem 'sidekiq'

@@ -1,6 +1,6 @@
-require_relative 'mail_job'
+require_relative 'roda_worker'
 
-class ForgotMailer < MailWorker
+class ForgotMailer < RodaWorker
   def perform(user_id)
     user = User.find(user_id)
 
