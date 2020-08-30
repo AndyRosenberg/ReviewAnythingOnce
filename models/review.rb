@@ -13,8 +13,9 @@ class Review < ActiveRecord::Base
   before_save :round_rating, if: :rating_changed?
 
   def self.already_reviewed?(product_name)
+    product_prz = product_name.parameterize
     similar_to(product_name).pluck(:product).any? do |pname|
-      pname.parameterize == product_name.parameterize
+      pname.parameterize == product_prz
     end
   end
 
