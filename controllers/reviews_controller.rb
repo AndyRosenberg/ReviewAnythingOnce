@@ -2,25 +2,27 @@ class ReviewsController < Roda
   route do |r|
     r.is do
       r.post do
-        review_attrs = review_params(r)
+        login_required(r)
+
+        review_attrs = review_params(r).merge(
+          "user_id" => session["current_user_id"]
+        )
+
         unless floatable?(review_attrs["rating"])
           flash.now["message"] = "Bad rating value."
           view("reviews/new")
         end
 
-        review_attrs.merge!(
-          "user_id" => session["current_user_id"],
-          "rating" => review_attrs["rating"].to_f
-        )
-
         review = Review.create(review_attrs)
 
-        if !review.new_record?
-          PhotoUploadJob.perform_async_in_prod(
-            "key" => r.params["img_name"],
-            "body" => r.params["img_body"],
-            "review_id" => review.id
-          ) if photo_params_present?(r)
+        if review.persisted?
+          if photo_params_present?(r)
+            PhotoUploadJob.perform_async_in_prod(
+              "key" => r.params["img_name"],
+              "body" => r.params["img_body"],
+              "review_id" => review.id
+            )
+          end
 
           flash["message"] = "Review successfully created."
           r.redirect("/")
@@ -32,6 +34,7 @@ class ReviewsController < Roda
     end
 
     r.get "new" do
+      login_required(r)
       view('reviews/new')
     end
 

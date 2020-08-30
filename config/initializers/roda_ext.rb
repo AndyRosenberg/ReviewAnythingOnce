@@ -11,6 +11,13 @@ class Roda
     r.redirect "/" unless r.env["HTTP_ACCEPT"] == "application/json"
   end
 
+  def login_required(r)
+    unless session["current_user_id"]
+      flash["message"] = "Please log in to perform this action."
+      r.redirect("/")
+    end
+  end
+
   def render_json(json)
     response.headers['Content-Type'] = 'application/json'
     response.write(json)

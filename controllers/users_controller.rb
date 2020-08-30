@@ -3,7 +3,7 @@ class UsersController < Roda
     r.is do
       r.post do
         user = User.create(user_params(r))
-        if !user.new_record?
+        if user.persisted?
           WelcomeMailer.perform_async_in_prod(user.id)
           session["current_user_id"] = user.id
           flash["message"] = "User has been created!"
@@ -78,7 +78,7 @@ class UsersController < Roda
     self.user = User.find_by(id: session["current_user_id"]) if session["current_user_id"]
 
     unless user && id == user.id
-      flash["message"] = "Unauthorized update this user."
+      flash["message"] = "Unauthorized to update this user."
       r.redirect("/")
     end
   end
