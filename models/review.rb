@@ -1,6 +1,10 @@
 class Review < ActiveRecord::Base
+  include PgSearch::Model
   belongs_to :user
   has_many :photos, as: :photoable
+  pg_search_scope :similar_to,
+                  against: :product,
+                  using: :trigram
 
   validates :rating, presence: true, inclusion: { in: 0.0..10.0 }
   validates :product, presence: true
@@ -8,12 +12,8 @@ class Review < ActiveRecord::Base
 
   before_save :round_rating, if: :rating_changed?
 
-  scope :reviewed, -> (product_name) { 
-    where("reviews.product ILIKE ?", "%#{product_name}%")
-  }
-
   def self.already_reviewed?(product_name)
-    reviewed(product_name).pluck(:product).any? do |pname|
+    similar_to(product_name).pluck(:product).any? do |pname|
       pname.parameterize == product_name.parameterize
     end
   end
