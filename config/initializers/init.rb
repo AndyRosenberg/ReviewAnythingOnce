@@ -6,10 +6,11 @@ require 'argon2'
 require 'sidekiq'
 require 'sidekiq/web'
 require 'erubi'
-require 'sinatra/activerecord'
+require 'active_record'
 require 'aws-sdk-s3'
 require 'pg_search'
 require_relative 'roda_ext'
+require_relative 'ar_ext'
 
 def dirload(dir)
   File.join(__dir__, "../../#{dir}/*.rb")
