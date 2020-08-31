@@ -1,8 +1,6 @@
 require "./config/initializers/init.rb"
 
 class App < Roda # :nodoc:
-  ActiveRecordRoda.register!
-
   route do |r|
     r.public
 

@@ -21,3 +21,5 @@ Dir.glob([
   dirload("models"),
   dirload("jobs")
 ]).each { |file| require file }
+
+ActiveRecordRoda.register!
