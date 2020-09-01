@@ -1,9 +1,8 @@
+ENV['RACK_ENV'] = 'test'
 require 'rack/test'
 require 'rspec'
 require 'database_cleaner/active_record'
 require "#{Dir.pwd}/app.rb"
-
-ENV['RACK_ENV'] = 'test'
 
 DatabaseCleaner[:active_record].strategy = :truncation
 
