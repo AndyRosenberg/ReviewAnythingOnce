@@ -18,4 +18,7 @@ gem 'dotenv'
 group :development, :test do
   gem 'pry'
   gem 'ffaker'
+  gem 'rspec'
+  gem 'rack-test'
+  gem 'database_cleaner-active_record'
 end
