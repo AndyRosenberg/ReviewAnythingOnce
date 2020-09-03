@@ -18,7 +18,7 @@
     <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" id="title-logo" href="#"><%= app_name %></a>
-        <a class="navbar-item" href="#">Post</a>
+        <a class="navbar-item" href="/reviews/new">Post</a>
         <a class="navbar-item" href="#">Explore</a>
         <a class="navbar-item is-hidden-desktop" href='<%= signed_in ? "/logins/sign_out" : "/logins/sign_in" %>'>
           <% if signed_in %>

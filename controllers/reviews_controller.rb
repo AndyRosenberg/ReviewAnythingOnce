@@ -41,7 +41,13 @@ class ReviewsController < Roda
     r.on Integer do |id|
       r.is do
         r.get do
-          # show
+          show_review = Review.find_by_id(id)
+          unless show_review
+            flash["message"] = "Unauthorized to view this review."
+            r.redirect("/")
+          end
+          @review_json = show_review.to_json_with_photo_ids
+          view("reviews/show")
         end
 
         r.put do

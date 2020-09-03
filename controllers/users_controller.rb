@@ -22,7 +22,12 @@ class UsersController < Roda
     r.on Integer do |id|
       r.is do
         r.get do
-          # show
+          show_user = User.find_by_id(id)
+          unless user
+            flash["message"] = "Unauthorized to view this user."
+            r.redirect("/")
+          end
+          # insert view
         end
 
         r.put do

@@ -25,6 +25,10 @@ class Review < ActiveRecord::Base
     end
   end
 
+  def to_json_with_photo_ids
+    as_json.merge("photo_ids" => photos.pluck(:id)).to_json
+  end
+
   private
   def round_rating
     self.rating = rating.round(1)
