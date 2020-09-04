@@ -23,6 +23,17 @@ class Photo < ActiveRecord::Base
     self
   end
 
+  def get_from_s3
+    begin
+      client.get_object({
+        bucket: ENV["AWS_BUCKET"], 
+        key: key, 
+      }).body.read
+    rescue StandardError => e
+      false
+    end
+  end
+
   private
   def client
     @client ||= Aws::S3::Client.new

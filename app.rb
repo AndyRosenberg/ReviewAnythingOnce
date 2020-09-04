@@ -19,5 +19,9 @@ class App < Roda # :nodoc:
     r.on 'reviews' do
       r.run ReviewsController
     end
+
+    r.on 'photos' do
+      r.run PhotosController
+    end
   end
 end
