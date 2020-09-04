@@ -26,27 +26,31 @@
     data() {
       return {
         csrf: document.querySelector('meta[name=_csrf]').content,
-        imgSrc: '',
         review: {},
         placeholder: "https://via.placeholder.com/500",
+        imgSrc: '',
       };
     },
     created() {
       try {
         this.review = JSON.parse(this.shownReview);
-        this.imgSrc = this.getS3Image(this.review["photo_ids"][0]);
+        this.getS3Image(this.review["photo_ids"][0]);
       } catch(err) {
-        this.imgSrc = this.placeholder;
+        this.setPlaceHolder();
       }
     },
     methods: {
       getS3Image(id) {
-        if (!id) { return this.placeholder }
+        if (!id) { return this.setPlaceHolder() }
         axios.get(`/photos/${id}`).then(response => {
           this.imgSrc = `data:image/png;base64, ${response.data.photo}`;
         }).catch(error => {
-          this.imgSrc = this.placeholder;
+          this.setPlaceHolder();
         });
+      },
+
+      setPlaceHolder() {
+        this.imgSrc = this.placeholder;
       }
     }
   }
