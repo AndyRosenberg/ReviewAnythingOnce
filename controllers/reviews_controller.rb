@@ -25,7 +25,7 @@ class ReviewsController < Roda
           end
 
           flash["message"] = "Review successfully created."
-          r.redirect("/")
+          r.redirect("/reviews/#{review.id}")
         else
           flash_ar_errors(review)
           view("reviews/new")

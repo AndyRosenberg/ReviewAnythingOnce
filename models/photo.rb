@@ -24,11 +24,17 @@ class Photo < ActiveRecord::Base
   end
 
   def get_from_s3
+    cached_photo = Sidekiq.redis { |redis| redis.get("photo_#{id}") }
+    return cached_photo if cached_photo
+
     begin
-      client.get_object({
+      photo_body = client.get_object({
         bucket: ENV["AWS_BUCKET"], 
         key: key, 
       }).body.read
+
+      Sidekiq.redis { |redis| redis.set("photo_#{id}", photo_body) }
+      photo_body
     rescue StandardError => e
       false
     end
