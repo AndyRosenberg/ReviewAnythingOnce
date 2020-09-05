@@ -17,11 +17,7 @@ class ReviewsController < Roda
 
         if review.persisted?
           if photo_params_present?(r)
-            PhotoUploadJob.perform_now(
-              "key" => r.params["img_name"],
-              "body" => r.params["img_body"],
-              "review_id" => review.id
-            )
+            upload_to_s3(r, review)
           end
 
           flash["message"] = "Review successfully created."
@@ -73,6 +69,23 @@ class ReviewsController < Roda
 
   def photo_params_present?(r)
     r.params.slice("img_name", "img_body").all?(&:present?)
+  end
+
+  def upload_to_s3(r, review)
+    PhotoUploadService.upload(
+      key: r.params["img_name"],
+      body: r.params["img_body"],
+      object: review
+    )
+  end
+
+  def background_upload(r, review)
+    PhotoUploadJob.perform_async(
+      "key" => r.params["img_name"],
+      "body" => r.params["img_body"],
+      "object_id" => review.id,
+      "object_type" => "Review"
+    )
   end
 
   def floatable?(rating)

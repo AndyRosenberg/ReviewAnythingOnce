@@ -20,6 +20,7 @@ end
 Dir.glob([
   dirload("controllers"),
   dirload("models"),
+  dirload("services"),
   dirload("jobs")
 ]).each { |file| require file }
 

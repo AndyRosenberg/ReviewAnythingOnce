@@ -3,16 +3,12 @@ require_relative 'roda_worker'
 class PhotoUploadJob < RodaWorker
   def perform(options)
     return unless has_all_keys?(options)
-    key, body = options["key"], options["body"]
-    review = Review.find(options["review_id"])
-
-    photo = review.photos.new(key: key)
-    if photo.upload(body).save
-      RodaCache.set("photo_#{photo.id}", body)
-    end
+    object = options["object_type"].constantize.find(options["object_id"])
+    options = options.slice("key", "body").merge({"object" => object})
+    PhotoUploadService.upload(options.symbolize_keys)
   end
 
   def has_all_keys?(options)
-    ["key", "body", "review_id"].all? { |opt| options.has_key?(opt) }
+    ["key", "body", "object_id", "object_type"].all? { |opt| options.has_key?(opt) }
   end
 end
