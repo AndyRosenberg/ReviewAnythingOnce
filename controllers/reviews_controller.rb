@@ -17,7 +17,7 @@ class ReviewsController < Roda
 
         if review.persisted?
           if photo_params_present?(r)
-            PhotoUploadJob.perform_async_in_prod(
+            PhotoUploadJob.perform_now(
               "key" => r.params["img_name"],
               "body" => r.params["img_body"],
               "review_id" => review.id

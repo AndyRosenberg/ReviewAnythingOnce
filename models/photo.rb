@@ -3,10 +3,6 @@ class Photo < ActiveRecord::Base
   belongs_to :photoable, :polymorphic => true
   validate :has_uploaded?, on: :create
   
-  def self.send_to_s3(key:, body:, object:)
-    object.photos.new(key: key).upload(body).save
-  end
-  
   def upload(body)
     begin
       client.put_object({
@@ -24,7 +20,7 @@ class Photo < ActiveRecord::Base
   end
 
   def get_from_s3
-    cached_photo = Sidekiq.redis { |redis| redis.get("photo_#{id}") }
+    cached_photo = RodaCache.get("photo_#{id}")
     return cached_photo if cached_photo
 
     begin
@@ -33,7 +29,7 @@ class Photo < ActiveRecord::Base
         key: key, 
       }).body.read
 
-      Sidekiq.redis { |redis| redis.set("photo_#{id}", photo_body) }
+      RodaCache.set("photo_#{id}", photo_body)
       photo_body
     rescue StandardError => e
       false

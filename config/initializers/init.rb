@@ -9,6 +9,7 @@ require 'erubi'
 require 'active_record'
 require 'aws-sdk-s3'
 require 'pg_search'
+require_relative 'cache'
 require_relative 'roda_ext'
 require_relative 'ar_ext'
 

@@ -1,4 +1,4 @@
-module ActiveRecordRoda
+class ActiveRecordRoda
   def self.environment
     ENV["RACK_ENV"] || "development"
   end
