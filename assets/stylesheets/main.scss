@@ -20,10 +20,6 @@ textarea {
   text-shadow: -.75px 0 rgba(66,85,104, .75), 0 .75px rgba(66,85,104, .75), .75px 0 rgba(66,85,104, .75), 0 -.75px rgba(66,85,104, .75);
 }
 
-#feed-sections section.section:first-of-type {
-  padding-top: .5rem;
-}
-
 #stand-up {
   padding: 2rem;
 }
@@ -51,20 +47,9 @@ textarea {
   margin: 1.5rem;
   padding: 0;
 }
-.card {
-  margin: 1rem 0;
-}
 
 main {
   padding-bottom: 2%;
-}
-
-#den-title-columns {
-  padding-top: .75rem;
-  padding-left: 1rem;
-  &.columns:not(:last-child) {
-    margin-bottom: 0;
-  }
 }
 
 @media all and (max-width: 800px) {

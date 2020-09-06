@@ -1,5 +1,5 @@
 <%
-  signed_in = !!session["current_user_id"]
+  current_user_id = session["current_user_id"]
   app_name = ENV["APP_NAME"]
 %>
 
@@ -17,33 +17,36 @@
   <body>
     <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" id="title-logo" href="#"><%= app_name %></a>
+        <a class="navbar-item" id="title-logo" href="/"><%= app_name %></a>
         <a class="navbar-item" href="/reviews/new">Post</a>
         <a class="navbar-item" href="#">Explore</a>
-        <a class="navbar-item is-hidden-desktop" href='<%= signed_in ? "/logins/sign_out" : "/logins/sign_in" %>'>
-          <% if signed_in %>
+        <a class="navbar-item is-hidden-desktop" href='<%= current_user_id ? "/logins/sign_out" : "/logins/sign_in" %>'>
+          <% if current_user_id %>
              Log Out
           <% else %>
             Log In
           <% end %>
         </a>
-        <% unless signed_in %>
+        <% unless current_user_id %>
           <a class="navbar-item is-hidden-desktop" href="/users/new">Sign Up</a>
         <% end %>
       </div>
 
       <div id="nav-start" class="navbar-menu">
         <div class="navbar-end">
+          <% if current_user_id %>
+            <a class="navbar-item" href='<%= "/users/#{current_user_id}/edit" %>'>Settings</a>
+          <% end %>
           <div class="navbar-item">
             <div class="buttons">
-              <a href='<%= signed_in ? "/logins/sign_out" : "/logins/sign_in" %>' class="button is-dark">
-                <% if signed_in %>
+              <a href='<%= current_user_id ? "/logins/sign_out" : "/logins/sign_in" %>' class="button is-dark">
+                <% if current_user_id %>
                   Log Out
                 <% else %>
                   Log In
                 <% end %>
               </a>
-              <% unless signed_in %>
+              <% unless current_user_id %>
                 <a href="/users/new" class="button is-light">
                   Sign Up
                 </a>
