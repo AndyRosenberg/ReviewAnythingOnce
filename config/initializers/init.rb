@@ -17,11 +17,10 @@ def dirload(dir)
   File.join(__dir__, "../../#{dir}/*.rb")
 end
 
-Dir.glob([
-  dirload("controllers"),
-  dirload("models"),
-  dirload("services"),
-  dirload("jobs")
-]).each { |file| require file }
+def all_directories
+  %w(controllers models services jobs).map { |dir| dirload(dir) }
+end
+
+Dir.glob(all_directories).each { |file| require file }
 
 ActiveRecordRoda.register!
