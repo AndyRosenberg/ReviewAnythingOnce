@@ -21,7 +21,7 @@ describe PhotoUploadService do
       review = Review.create(product: "something", rating: 5.0)
       instance = described_class.new(key: "key", body: "body", object: review)
       allow_any_instance_of(Photo).to receive(:upload).and_return(Photo.new(key: instance.send(:key), uploaded: true))
-      expect(RodaCache).to receive(:set)
+      expect(Sidekiq).to receive(:cache_set)
       instance.call
     end
   end

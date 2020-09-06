@@ -20,7 +20,7 @@ class Photo < ActiveRecord::Base
   end
 
   def get_from_s3
-    cached_photo = RodaCache.get("photo_#{id}")
+    cached_photo = Sidekiq.cache_get("photo_#{id}")
     return cached_photo if cached_photo
 
     begin
@@ -29,7 +29,7 @@ class Photo < ActiveRecord::Base
         key: key, 
       }).body.read
 
-      RodaCache.set("photo_#{id}", photo_body)
+      Sidekiq.cache_set("photo_#{id}", photo_body)
       photo_body
     rescue StandardError => e
       false

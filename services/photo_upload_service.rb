@@ -11,7 +11,7 @@ class PhotoUploadService
     photo = object.photos.new(key: key)
 
     if photo.upload(body).save
-      RodaCache.set("photo_#{photo.id}", body)
+      Sidekiq.cache_set("photo_#{photo.id}", body)
     end
   end
 
