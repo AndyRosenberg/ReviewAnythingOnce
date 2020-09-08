@@ -1,10 +1,8 @@
-class PhotoUploadService
+require_relative 'service'
+
+class PhotoUploadService < Service
   def self.upload(key:, body:, object:)
     new(key: key, body: body, object: object).call
-  end
-  
-  def initialize(**kwargs)
-    kwargs.each { |k, v| self.send("#{k}=", v) }
   end
 
   def call
