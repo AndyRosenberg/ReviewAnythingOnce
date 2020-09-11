@@ -1,5 +1,3 @@
-require_relative 'service'
-
 class PhotoUploadService < Service
   def self.upload(key:, body:, object:)
     new(key: key, body: body, object: object).call

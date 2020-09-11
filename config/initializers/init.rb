@@ -19,7 +19,7 @@ def dirload(dir)
 end
 
 def all_directories
-  %w(controllers models services jobs).map { |dir| dirload(dir) }
+  %w(controllers models services/base services jobs).map { |dir| dirload(dir) }
 end
 
 Dir.glob(all_directories).each { |file| require file }

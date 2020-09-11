@@ -1,43 +1,34 @@
-require_relative 'service'
-
 class PaginationService < Service
-  def self.paginate(klass: Review, options: {})
-    new(klass: klass, options: options).call
+  def self.paginate(**options)
+    new(defaults.merge(options)).call
   end
 
   def call
-    cursor_pagination
+    set_result(cursor_pagination)
   end
 
   private
-  attr_accessor :klass, :options
+  attr_accessor :klass, :limit, :sort, :order, 
+                :where, :before, :after
+
+  def self.defaults
+    { klass: Review, limit: 25, sort: "-", order: "created_at" }
+  end
+
+  def set_result(cursor)
+    { "page" => cursor.first, "navigation" => cursor.last }.to_json
+  end
 
   def cursor_pagination
     query.pager(
-      after: options[:after],
-      before: options[:before],
+      after: after,
+      before: before,
       limit: limit,
-      sort: sort
+      sort: sort.concat(order)
     )
   end
 
   def query
-    options[:where] ? klass.send(:where, *options[:where]) : klass
-  end
-
-  def direction
-    options.fetch(:direction, "DESC")
-  end
-
-  def order
-    options.fetch(:order, "created_at")
-  end
-
-  def limit
-    options.fetch(:limit, 25)
-  end
-
-  def sort
-    direction == "DESC" ? "-#{order}" : order
+    where ? klass.send(*where) : klass
   end
 end
