@@ -29,6 +29,6 @@ class PaginationService < Service
   end
 
   def query
-    where ? klass.send(*where) : klass
+    where ? klass.send(:where, *where) : klass
   end
 end

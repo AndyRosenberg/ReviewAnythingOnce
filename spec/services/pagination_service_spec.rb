@@ -26,6 +26,11 @@ describe PaginationService do
       expect(page.first["rating"]).to eq(Review.all.max_by(&:rating).rating)
     end
 
+    it "filters with where queries" do
+      page = JSON.parse(described_class.paginate(order: "rating", where: ["rating < ?", 5]))["page"]
+      expect(page.all? {|r| r["rating"] < 5 }).to be
+    end
+
     it "returns lowest rated review when review order and + sort is specified" do
       page = JSON.parse(described_class.paginate(sort: "+", order: "rating"))["page"]
       expect(page.first["rating"]).to eq(Review.all.min_by(&:rating).rating)
