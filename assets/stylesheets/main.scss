@@ -52,6 +52,10 @@ main {
   padding-bottom: 2%;
 }
 
+.is-250x250 img {
+  max-width: 250px;
+}
+
 @media all and (max-width: 800px) {
   .column {
     max-width: 25rem;

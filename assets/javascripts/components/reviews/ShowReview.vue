@@ -1,11 +1,7 @@
 <template>
   <section class="section">
     <article class="media is-10">
-      <figure class="media-left">
-        <p class="image is-500x500">
-          <img :src="imgSrc">
-        </p>
-      </figure>
+      <Photo :id="photo_id" />
       <div class="media-content">
         <div class="content column is-10">
           <h3 class="has-text-white">{{this.review.product}}</h3>
@@ -21,37 +17,20 @@
 
 <script>
   import axios from 'axios';
+  import Photo from '../photos/Photo.vue';
   export default {
     props: ['shown-review'],
+    components: { Photo },
     data() {
       return {
         csrf: document.querySelector('meta[name=_csrf]').content,
         review: {},
-        placeholder: "https://via.placeholder.com/500",
-        imgSrc: '',
+        photo_id: 0
       };
     },
     created() {
-      try {
-        this.review = JSON.parse(this.shownReview);
-        this.getS3Image(this.review["photo_ids"][0]);
-      } catch(err) {
-        this.setPlaceHolder();
-      }
-    },
-    methods: {
-      getS3Image(id) {
-        if (!id) { return this.setPlaceHolder() }
-        axios.get(`/photos/${id}`).then(response => {
-          this.imgSrc = `data:image/png;base64, ${response.data.photo}`;
-        }).catch(error => {
-          this.setPlaceHolder();
-        });
-      },
-
-      setPlaceHolder() {
-        this.imgSrc = this.placeholder;
-      }
+      this.review = JSON.parse(this.shownReview)
+      this.photo_id = this.review["photo_ids"][0];
     }
   }
 </script>

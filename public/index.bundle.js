@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _users_NewUserForm_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./users/NewUserForm.vue */ \"./assets/javascripts/components/users/NewUserForm.vue\");\n/* harmony import */ var _users_EditUserForm_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users/EditUserForm.vue */ \"./assets/javascripts/components/users/EditUserForm.vue\");\n/* harmony import */ var _logins_SignIn_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./logins/SignIn.vue */ \"./assets/javascripts/components/logins/SignIn.vue\");\n/* harmony import */ var _logins_Forgot_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./logins/Forgot.vue */ \"./assets/javascripts/components/logins/Forgot.vue\");\n/* harmony import */ var _logins_Reset_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./logins/Reset.vue */ \"./assets/javascripts/components/logins/Reset.vue\");\n/* harmony import */ var _reviews_NewReviewForm_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./reviews/NewReviewForm.vue */ \"./assets/javascripts/components/reviews/NewReviewForm.vue\");\n/* harmony import */ var _reviews_ShowReview_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./reviews/ShowReview.vue */ \"./assets/javascripts/components/reviews/ShowReview.vue\");\n\n\n\n\n\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  'new-user-form': _users_NewUserForm_vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n  'edit-user-form': _users_EditUserForm_vue__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  'new-review-form': _reviews_NewReviewForm_vue__WEBPACK_IMPORTED_MODULE_5__[\"default\"],\n  'show-review': _reviews_ShowReview_vue__WEBPACK_IMPORTED_MODULE_6__[\"default\"],\n  'sign-in': _logins_SignIn_vue__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n  'forgot-password': _logins_Forgot_vue__WEBPACK_IMPORTED_MODULE_3__[\"default\"],\n  'reset-password': _logins_Reset_vue__WEBPACK_IMPORTED_MODULE_4__[\"default\"],\n});\n\n//# sourceURL=webpack:///./assets/javascripts/components/components.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _users_NewUserForm_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./users/NewUserForm.vue */ \"./assets/javascripts/components/users/NewUserForm.vue\");\n/* harmony import */ var _users_EditUserForm_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users/EditUserForm.vue */ \"./assets/javascripts/components/users/EditUserForm.vue\");\n/* harmony import */ var _logins_SignIn_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./logins/SignIn.vue */ \"./assets/javascripts/components/logins/SignIn.vue\");\n/* harmony import */ var _logins_Forgot_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./logins/Forgot.vue */ \"./assets/javascripts/components/logins/Forgot.vue\");\n/* harmony import */ var _logins_Reset_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./logins/Reset.vue */ \"./assets/javascripts/components/logins/Reset.vue\");\n/* harmony import */ var _reviews_NewReviewForm_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./reviews/NewReviewForm.vue */ \"./assets/javascripts/components/reviews/NewReviewForm.vue\");\n/* harmony import */ var _reviews_ReviewIndex_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./reviews/ReviewIndex.vue */ \"./assets/javascripts/components/reviews/ReviewIndex.vue\");\n/* harmony import */ var _reviews_ShowReview_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./reviews/ShowReview.vue */ \"./assets/javascripts/components/reviews/ShowReview.vue\");\n\n\n\n\n\n\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  'new-user-form': _users_NewUserForm_vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n  'edit-user-form': _users_EditUserForm_vue__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  'new-review-form': _reviews_NewReviewForm_vue__WEBPACK_IMPORTED_MODULE_5__[\"default\"],\n  'review-index': _reviews_ReviewIndex_vue__WEBPACK_IMPORTED_MODULE_6__[\"default\"],\n  'show-review': _reviews_ShowReview_vue__WEBPACK_IMPORTED_MODULE_7__[\"default\"],\n  'sign-in': _logins_SignIn_vue__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n  'forgot-password': _logins_Forgot_vue__WEBPACK_IMPORTED_MODULE_3__[\"default\"],\n  'reset-password': _logins_Reset_vue__WEBPACK_IMPORTED_MODULE_4__[\"default\"],\n});\n\n//# sourceURL=webpack:///./assets/javascripts/components/components.js?");
 
 /***/ }),
 
@@ -206,6 +206,42 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 
 /***/ }),
 
+/***/ "./assets/javascripts/components/photos/Photo.vue":
+/*!********************************************************!*\
+  !*** ./assets/javascripts/components/photos/Photo.vue ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Photo_vue_vue_type_template_id_7da0ab14___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Photo.vue?vue&type=template&id=7da0ab14& */ \"./assets/javascripts/components/photos/Photo.vue?vue&type=template&id=7da0ab14&\");\n/* harmony import */ var _Photo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Photo.vue?vue&type=script&lang=js& */ \"./assets/javascripts/components/photos/Photo.vue?vue&type=script&lang=js&\");\n/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ \"./node_modules/vue-loader/lib/runtime/componentNormalizer.js\");\n\n\n\n\n\n/* normalize component */\n\nvar component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\n  _Photo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  _Photo_vue_vue_type_template_id_7da0ab14___WEBPACK_IMPORTED_MODULE_0__[\"render\"],\n  _Photo_vue_vue_type_template_id_7da0ab14___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"],\n  false,\n  null,\n  null,\n  null\n  \n)\n\n/* hot reload */\nif (false) { var api; }\ncomponent.options.__file = \"assets/javascripts/components/photos/Photo.vue\"\n/* harmony default export */ __webpack_exports__[\"default\"] = (component.exports);\n\n//# sourceURL=webpack:///./assets/javascripts/components/photos/Photo.vue?");
+
+/***/ }),
+
+/***/ "./assets/javascripts/components/photos/Photo.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************!*\
+  !*** ./assets/javascripts/components/photos/Photo.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib??vue-loader-options!./Photo.vue?vue&type=script&lang=js& */ \"./node_modules/vue-loader/lib/index.js?!./assets/javascripts/components/photos/Photo.vue?vue&type=script&lang=js&\");\n/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__[\"default\"] = (_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[\"default\"]); \n\n//# sourceURL=webpack:///./assets/javascripts/components/photos/Photo.vue?");
+
+/***/ }),
+
+/***/ "./assets/javascripts/components/photos/Photo.vue?vue&type=template&id=7da0ab14&":
+/*!***************************************************************************************!*\
+  !*** ./assets/javascripts/components/photos/Photo.vue?vue&type=template&id=7da0ab14& ***!
+  \***************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_template_id_7da0ab14___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Photo.vue?vue&type=template&id=7da0ab14& */ \"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./assets/javascripts/components/photos/Photo.vue?vue&type=template&id=7da0ab14&\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_template_id_7da0ab14___WEBPACK_IMPORTED_MODULE_0__[\"render\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Photo_vue_vue_type_template_id_7da0ab14___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"]; });\n\n\n\n//# sourceURL=webpack:///./assets/javascripts/components/photos/Photo.vue?");
+
+/***/ }),
+
 /***/ "./assets/javascripts/components/reviews/NewReviewForm.vue":
 /*!*****************************************************************!*\
   !*** ./assets/javascripts/components/reviews/NewReviewForm.vue ***!
@@ -239,6 +275,42 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NewReviewForm_vue_vue_type_template_id_076557e6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./NewReviewForm.vue?vue&type=template&id=076557e6& */ \"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./assets/javascripts/components/reviews/NewReviewForm.vue?vue&type=template&id=076557e6&\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NewReviewForm_vue_vue_type_template_id_076557e6___WEBPACK_IMPORTED_MODULE_0__[\"render\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NewReviewForm_vue_vue_type_template_id_076557e6___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"]; });\n\n\n\n//# sourceURL=webpack:///./assets/javascripts/components/reviews/NewReviewForm.vue?");
+
+/***/ }),
+
+/***/ "./assets/javascripts/components/reviews/ReviewIndex.vue":
+/*!***************************************************************!*\
+  !*** ./assets/javascripts/components/reviews/ReviewIndex.vue ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ReviewIndex_vue_vue_type_template_id_2a6a33c4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ReviewIndex.vue?vue&type=template&id=2a6a33c4& */ \"./assets/javascripts/components/reviews/ReviewIndex.vue?vue&type=template&id=2a6a33c4&\");\n/* harmony import */ var _ReviewIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ReviewIndex.vue?vue&type=script&lang=js& */ \"./assets/javascripts/components/reviews/ReviewIndex.vue?vue&type=script&lang=js&\");\n/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ \"./node_modules/vue-loader/lib/runtime/componentNormalizer.js\");\n\n\n\n\n\n/* normalize component */\n\nvar component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\n  _ReviewIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  _ReviewIndex_vue_vue_type_template_id_2a6a33c4___WEBPACK_IMPORTED_MODULE_0__[\"render\"],\n  _ReviewIndex_vue_vue_type_template_id_2a6a33c4___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"],\n  false,\n  null,\n  null,\n  null\n  \n)\n\n/* hot reload */\nif (false) { var api; }\ncomponent.options.__file = \"assets/javascripts/components/reviews/ReviewIndex.vue\"\n/* harmony default export */ __webpack_exports__[\"default\"] = (component.exports);\n\n//# sourceURL=webpack:///./assets/javascripts/components/reviews/ReviewIndex.vue?");
+
+/***/ }),
+
+/***/ "./assets/javascripts/components/reviews/ReviewIndex.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************!*\
+  !*** ./assets/javascripts/components/reviews/ReviewIndex.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_vue_loader_lib_index_js_vue_loader_options_ReviewIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib??vue-loader-options!./ReviewIndex.vue?vue&type=script&lang=js& */ \"./node_modules/vue-loader/lib/index.js?!./assets/javascripts/components/reviews/ReviewIndex.vue?vue&type=script&lang=js&\");\n/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__[\"default\"] = (_node_modules_vue_loader_lib_index_js_vue_loader_options_ReviewIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[\"default\"]); \n\n//# sourceURL=webpack:///./assets/javascripts/components/reviews/ReviewIndex.vue?");
+
+/***/ }),
+
+/***/ "./assets/javascripts/components/reviews/ReviewIndex.vue?vue&type=template&id=2a6a33c4&":
+/*!**********************************************************************************************!*\
+  !*** ./assets/javascripts/components/reviews/ReviewIndex.vue?vue&type=template&id=2a6a33c4& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReviewIndex_vue_vue_type_template_id_2a6a33c4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./ReviewIndex.vue?vue&type=template&id=2a6a33c4& */ \"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./assets/javascripts/components/reviews/ReviewIndex.vue?vue&type=template&id=2a6a33c4&\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReviewIndex_vue_vue_type_template_id_2a6a33c4___WEBPACK_IMPORTED_MODULE_0__[\"render\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReviewIndex_vue_vue_type_template_id_2a6a33c4___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"]; });\n\n\n\n//# sourceURL=webpack:///./assets/javascripts/components/reviews/ReviewIndex.vue?");
 
 /***/ }),
 
@@ -786,6 +858,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n//\n//\n//\n//\n//\n//\n//\n/
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/index.js?!./assets/javascripts/components/photos/Photo.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib??vue-loader-options!./assets/javascripts/components/photos/Photo.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n//\n//\n//\n//\n//\n//\n//\n//\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  props: ['id', 'type', 'small'],\n  data() {\n    return {\n      placeholder: \"https://via.placeholder.com/500\",\n      imgSrc: '',\n    };\n  },\n  created() {\n    try {\n      this.getS3Image(this.id, this.type);\n    } catch(err) {\n      this.setPlaceHolder();\n    }\n  },\n  methods: {\n    getS3Image(id, type) {\n      if (!id) { return this.setPlaceHolder() }\n      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(\n        this.setUrl(id,type)\n      ).then(response => {\n        this.imgSrc = `data:image/png;base64, ${response.data.photo}`;\n      }).catch(error => {\n        this.setPlaceHolder();\n      });\n    },\n\n    setPlaceHolder() {\n      this.imgSrc = this.placeholder;\n    },\n\n    setUrl(id, type) {\n      if (type) {\n        return `/photos/by_type/${type}/${id}`\n      } else {\n        return `/photos/${id}`\n      }\n    }\n  }\n});\n\n\n//# sourceURL=webpack:///./assets/javascripts/components/photos/Photo.vue?./node_modules/vue-loader/lib??vue-loader-options");
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/index.js?!./assets/javascripts/components/reviews/NewReviewForm.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib??vue-loader-options!./assets/javascripts/components/reviews/NewReviewForm.vue?vue&type=script&lang=js& ***!
@@ -798,6 +882,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/index.js?!./assets/javascripts/components/reviews/ReviewIndex.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib??vue-loader-options!./assets/javascripts/components/reviews/ReviewIndex.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _photos_Photo_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../photos/Photo.vue */ \"./assets/javascripts/components/photos/Photo.vue\");\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  props: ['initial-reviews'],\n  components: { Photo: _photos_Photo_vue__WEBPACK_IMPORTED_MODULE_1__[\"default\"] },\n  data() {\n    return {\n      reviews: [],\n      navigation: {},\n      placeholder: \"https://via.placeholder.com/150\",\n      imgSrc: '',\n    };\n  },\n\n  created() {\n    let pagination = JSON.parse(this.initialReviews);\n    this.reviews = pagination.page;\n    this.navigation = pagination.navigation;\n  },\n\n  methods: {\n  }\n});\n\n\n//# sourceURL=webpack:///./assets/javascripts/components/reviews/ReviewIndex.vue?./node_modules/vue-loader/lib??vue-loader-options");
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/index.js?!./assets/javascripts/components/reviews/ShowReview.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib??vue-loader-options!./assets/javascripts/components/reviews/ShowReview.vue?vue&type=script&lang=js& ***!
@@ -806,7 +902,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  props: ['shown-review'],\n  data() {\n    return {\n      csrf: document.querySelector('meta[name=_csrf]').content,\n      review: {},\n      placeholder: \"https://via.placeholder.com/500\",\n      imgSrc: '',\n    };\n  },\n  created() {\n    try {\n      this.review = JSON.parse(this.shownReview);\n      this.getS3Image(this.review[\"photo_ids\"][0]);\n    } catch(err) {\n      this.setPlaceHolder();\n    }\n  },\n  methods: {\n    getS3Image(id) {\n      if (!id) { return this.setPlaceHolder() }\n      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(`/photos/${id}`).then(response => {\n        this.imgSrc = `data:image/png;base64, ${response.data.photo}`;\n      }).catch(error => {\n        this.setPlaceHolder();\n      });\n    },\n\n    setPlaceHolder() {\n      this.imgSrc = this.placeholder;\n    }\n  }\n});\n\n\n//# sourceURL=webpack:///./assets/javascripts/components/reviews/ShowReview.vue?./node_modules/vue-loader/lib??vue-loader-options");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _photos_Photo_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../photos/Photo.vue */ \"./assets/javascripts/components/photos/Photo.vue\");\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  props: ['shown-review'],\n  components: { Photo: _photos_Photo_vue__WEBPACK_IMPORTED_MODULE_1__[\"default\"] },\n  data() {\n    return {\n      csrf: document.querySelector('meta[name=_csrf]').content,\n      review: {},\n      photo_id: 0\n    };\n  },\n  created() {\n    this.review = JSON.parse(this.shownReview)\n    this.photo_id = this.review[\"photo_ids\"][0];\n  }\n});\n\n\n//# sourceURL=webpack:///./assets/javascripts/components/reviews/ShowReview.vue?./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 
@@ -870,6 +966,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./assets/javascripts/components/photos/Photo.vue?vue&type=template&id=7da0ab14&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./assets/javascripts/components/photos/Photo.vue?vue&type=template&id=7da0ab14& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"figure\", { staticClass: \"media-left\" }, [\n    _c(\n      \"p\",\n      { staticClass: \"image\", class: _vm.small ? \"is-250x250\" : \"is-500x500\" },\n      [_c(\"img\", { attrs: { src: _vm.imgSrc } })]\n    )\n  ])\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack:///./assets/javascripts/components/photos/Photo.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./assets/javascripts/components/reviews/NewReviewForm.vue?vue&type=template&id=076557e6&":
 /*!******************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./assets/javascripts/components/reviews/NewReviewForm.vue?vue&type=template&id=076557e6& ***!
@@ -882,6 +990,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./assets/javascripts/components/reviews/ReviewIndex.vue?vue&type=template&id=2a6a33c4&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./assets/javascripts/components/reviews/ReviewIndex.vue?vue&type=template&id=2a6a33c4& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"div\", { staticClass: \"columns\" }, [\n    _c(\n      \"section\",\n      { staticClass: \"section\" },\n      [\n        _c(\"h1\", { staticClass: \"is-size-1 mx-4 my-4 has-text-centered\" }, [\n          _vm._v(\"Explore Reviews\")\n        ]),\n        _vm._v(\" \"),\n        _vm._l(_vm.reviews, function(review) {\n          return _c(\"div\", { key: review.id, staticClass: \"mx-4 my-4\" }, [\n            _c(\n              \"article\",\n              { staticClass: \"media is-vcentered\" },\n              [\n                _c(\"Photo\", {\n                  attrs: { id: review.id, type: \"review\", small: \"true\" }\n                }),\n                _vm._v(\" \"),\n                _c(\"div\", { staticClass: \"media-content\" }, [\n                  _c(\"div\", { staticClass: \"content column\" }, [\n                    _c(\"h4\", { staticClass: \"has-text-white\" }, [\n                      _vm._v(_vm._s(review.product))\n                    ]),\n                    _vm._v(\" \"),\n                    _c(\"p\", { staticClass: \"has-text-white is-size-4 mb-4\" }, [\n                      _c(\"strong\", { staticClass: \"has-text-white\" }, [\n                        _vm._v(_vm._s(review.rating))\n                      ]),\n                      _vm._v(\" \"),\n                      _c(\"small\", [_vm._v(\"out of\")]),\n                      _vm._v(\" 10\")\n                    ]),\n                    _vm._v(\" \"),\n                    _c(\"p\", [\n                      _vm._v(\n                        \"\\n              \" +\n                          _vm._s(review.body) +\n                          \"\\n            \"\n                      )\n                    ])\n                  ])\n                ])\n              ],\n              1\n            )\n          ])\n        })\n      ],\n      2\n    )\n  ])\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack:///./assets/javascripts/components/reviews/ReviewIndex.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./assets/javascripts/components/reviews/ShowReview.vue?vue&type=template&id=5c53f4bb&":
 /*!***************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./assets/javascripts/components/reviews/ShowReview.vue?vue&type=template&id=5c53f4bb& ***!
@@ -890,7 +1010,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"section\", { staticClass: \"section\" }, [\n    _c(\"article\", { staticClass: \"media is-10\" }, [\n      _c(\"figure\", { staticClass: \"media-left\" }, [\n        _c(\"p\", { staticClass: \"image is-500x500\" }, [\n          _c(\"img\", { attrs: { src: _vm.imgSrc } })\n        ])\n      ]),\n      _vm._v(\" \"),\n      _c(\"div\", { staticClass: \"media-content\" }, [\n        _c(\"div\", { staticClass: \"content column is-10\" }, [\n          _c(\"h3\", { staticClass: \"has-text-white\" }, [\n            _vm._v(_vm._s(this.review.product))\n          ]),\n          _vm._v(\" \"),\n          _c(\"p\", { staticClass: \"has-text-white is-size-2 mb-3\" }, [\n            _c(\"strong\", { staticClass: \"has-text-white\" }, [\n              _vm._v(_vm._s(this.review.rating))\n            ]),\n            _vm._v(\" \"),\n            _c(\"small\", [_vm._v(\"out of\")]),\n            _vm._v(\" 10\")\n          ]),\n          _vm._v(\" \"),\n          _c(\"p\", [\n            _vm._v(\"\\n          \" + _vm._s(this.review.body) + \"\\n        \")\n          ])\n        ])\n      ])\n    ])\n  ])\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack:///./assets/javascripts/components/reviews/ShowReview.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"section\", { staticClass: \"section\" }, [\n    _c(\n      \"article\",\n      { staticClass: \"media is-10\" },\n      [\n        _c(\"Photo\", { attrs: { id: _vm.photo_id } }),\n        _vm._v(\" \"),\n        _c(\"div\", { staticClass: \"media-content\" }, [\n          _c(\"div\", { staticClass: \"content column is-10\" }, [\n            _c(\"h3\", { staticClass: \"has-text-white\" }, [\n              _vm._v(_vm._s(this.review.product))\n            ]),\n            _vm._v(\" \"),\n            _c(\"p\", { staticClass: \"has-text-white is-size-2 mb-3\" }, [\n              _c(\"strong\", { staticClass: \"has-text-white\" }, [\n                _vm._v(_vm._s(this.review.rating))\n              ]),\n              _vm._v(\" \"),\n              _c(\"small\", [_vm._v(\"out of\")]),\n              _vm._v(\" 10\")\n            ]),\n            _vm._v(\" \"),\n            _c(\"p\", [\n              _vm._v(\"\\n          \" + _vm._s(this.review.body) + \"\\n        \")\n            ])\n          ])\n        ])\n      ],\n      1\n    )\n  ])\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack:///./assets/javascripts/components/reviews/ShowReview.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 

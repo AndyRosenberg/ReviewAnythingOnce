@@ -27,6 +27,11 @@ class ReviewsController < Roda
           view("reviews/new")
         end
       end
+
+      r.get do
+        @initial_reviews = PaginationService.paginate
+        view("reviews/index")
+      end
     end
 
     r.get "new" do
