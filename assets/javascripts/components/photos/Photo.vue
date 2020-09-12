@@ -16,13 +16,11 @@
         imgSrc: '',
       };
     },
+
     created() {
-      try {
-        this.getS3Image(this.id, this.type);
-      } catch(err) {
-        this.setPlaceHolder();
-      }
+      this.getS3Image(this.id, this.type);
     },
+
     methods: {
       getS3Image(id, type) {
         if (!id) { return this.setPlaceHolder() }

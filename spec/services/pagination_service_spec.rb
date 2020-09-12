@@ -17,7 +17,7 @@ describe PaginationService do
     end
 
     it "returns the reviews in acending order when + sort is specified" do
-      page = JSON.parse(described_class.paginate(sort: "+"))["page"]
+      page = JSON.parse(described_class.paginate(sort: "ASC"))["page"]
       expect(page.first).to eq(Review.first.as_json)
     end
 
@@ -32,7 +32,7 @@ describe PaginationService do
     end
 
     it "returns lowest rated review when review order and + sort is specified" do
-      page = JSON.parse(described_class.paginate(sort: "+", order: "rating"))["page"]
+      page = JSON.parse(described_class.paginate(sort: "ASC", order: "rating"))["page"]
       expect(page.first["rating"]).to eq(Review.all.min_by(&:rating).rating)
     end
     
@@ -46,7 +46,7 @@ describe PaginationService do
       let(:json) { JSON.parse(described_class.paginate(limit: 5)) }
       let(:page) { json["page"] }
       let(:nav) { json["navigation"] }
-      let(:page_2) { JSON.parse(described_class.paginate(after: nav["next_cursor"]))["page"] }
+      let(:page_2) { JSON.parse(described_class.paginate(cursor: nav["next_cursor"]))["page"] }
 
       it "changes page by limit attribute" do
         expect(page.size).to eq 5

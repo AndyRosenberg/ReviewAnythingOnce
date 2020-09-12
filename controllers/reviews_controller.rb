@@ -34,6 +34,14 @@ class ReviewsController < Roda
       end
     end
 
+    r.get "api" do
+      api_only(r)
+
+      render_json PaginationService.paginate(
+        cursor: r.params["after"]
+      )
+    end
+
     r.get "new" do
       login_required(r)
       view('reviews/new')

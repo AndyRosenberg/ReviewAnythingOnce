@@ -8,7 +8,7 @@ class Roda
   plugin :flash
 
   def api_only(r)
-    r.redirect "/" unless r.env["HTTP_ACCEPT"] == "application/json"
+    r.redirect "/" unless r.env["HTTP_ACCEPT"].include?("application/json")
   end
 
   def login_required(r)
