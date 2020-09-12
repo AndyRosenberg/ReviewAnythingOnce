@@ -9,7 +9,7 @@ class PaginationService < Service
 
   private
   attr_accessor :klass, :limit, :sort, :order, 
-                :where, :cursor
+                :where, :before, :cursor
 
   def self.defaults
     { klass: Review, limit: 25, sort: "DESC", order: "created_at" }
@@ -32,7 +32,11 @@ class PaginationService < Service
   end
 
   def direction
-    ascending? ? ">" : "<"
+    if ascending?
+      before ? "<" : ">"
+    else
+      before ? ">" : "<"
+    end
   end
 
   def ascending?

@@ -42,6 +42,28 @@ describe PaginationService do
       expect(page.first["name"]).to eq(User.last.name)
     end
 
+    context "before set to true" do
+      it "hits its limit descending" do
+        page = JSON.parse(described_class.paginate(before: true))["page"]
+        expect(page.empty?).to be
+      end
+
+      it "hits its limit ascending" do
+        page = JSON.parse(described_class.paginate(sort: "ASC", before: true))["page"]
+        expect(page.empty?).to be
+      end
+
+      it "finds the first review" do
+        page = JSON.parse(described_class.paginate(sort: "ASC", cursor: Review.second.id, before: true))["page"]
+        expect(page.one? && page.one? { |r| r["id"] == Review.first.id }).to be
+      end
+
+      it "finds the last review" do
+        page = JSON.parse(described_class.paginate(sort: "DESC", cursor: Review.all[-2].id, before: true))["page"]
+        expect(page.one? && page.one? { |r| r["id"] == Review.last.id }).to be
+      end
+    end
+
     context "multiple pages" do
       let(:json) { JSON.parse(described_class.paginate(limit: 5)) }
       let(:page) { json["page"] }
@@ -54,6 +76,11 @@ describe PaginationService do
 
       it "finds the correct next cursor pased on defaults" do
         expect([page.first["id"], page_2.first["id"]]).to eq [10, 5]
+      end
+
+      it "loads the correct records on before" do
+        page_2 = JSON.parse(described_class.paginate(cursor: nav["next_cursor"], before: true))["page"]
+        expect(page_2.first["id"]).to eq(10)
       end
     end
   end
