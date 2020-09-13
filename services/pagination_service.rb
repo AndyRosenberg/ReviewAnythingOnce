@@ -15,7 +15,7 @@ class PaginationService < Service
 
   def page
     @page ||= query.where("id #{direction} ?", cursor?)
-              .limit(limit).order("#{order} #{sort}")
+                .limit(limit).order("#{order} #{sort}")
   end
 
   def navigation
