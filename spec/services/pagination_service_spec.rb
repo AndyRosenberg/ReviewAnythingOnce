@@ -42,6 +42,18 @@ describe PaginationService do
       expect(page.first["name"]).to eq(User.last.name)
     end
 
+    context "empty class" do
+      it "hits its limit descending" do
+        page = JSON.parse(described_class.paginate(klass: Photo))["page"]
+        expect(page.empty?).to be
+      end
+
+      it "hits its limit ascending" do
+        page = JSON.parse(described_class.paginate(klass: Photo, sort: "ASC"))["page"]
+        expect(page.empty?).to be
+      end
+    end
+
     context "before set to true" do
       it "hits its limit descending" do
         page = JSON.parse(described_class.paginate(before: true))["page"]

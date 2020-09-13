@@ -1,6 +1,12 @@
 class PaginationService < Service
-  def self.paginate(**options)
-    new(defaults.merge(options)).call
+  class << self
+    def paginate(**options)
+      new(defaults.merge(options)).call
+    end
+
+    def defaults
+      { klass: Review, limit: 25, sort: "DESC", order: "created_at" }
+    end
   end
 
   def call
@@ -11,24 +17,16 @@ class PaginationService < Service
   attr_accessor :klass, :limit, :sort, :order, 
                 :where, :before, :cursor
 
-  def self.defaults
-    { klass: Review, limit: 25, sort: "DESC", order: "created_at" }
-  end
-
   def page
     @page ||= query.where("id #{direction} ?", cursor?).limit(limit).order("#{order} #{sort}")
   end
 
+  def navigation
+    { "prev_cursor" => page.first&.id, "next_cursor" => page.last&.id }
+  end
+
   def query
     where ? klass.send(:where, *where) : klass
-  end
-
-  def cursor?
-    cursor || start
-  end
-
-  def start
-    ascending? ? 0 : klass.last.id + 1
   end
 
   def direction
@@ -39,11 +37,19 @@ class PaginationService < Service
     end
   end
 
-  def ascending?
-    sort == "ASC"
+  def cursor?
+    cursor || start
   end
 
-  def navigation
-    { "prev_cursor" => page.first&.id, "next_cursor" => page.last&.id }
+  def start
+    ascending? ? 0 : last_id
+  end
+
+  def last_id
+    (klass.last&.id || 0) + 1
+  end
+
+  def ascending?
+    sort == "ASC"
   end
 end
