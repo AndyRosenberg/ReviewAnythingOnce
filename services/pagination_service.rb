@@ -1,12 +1,10 @@
 class PaginationService < Service
-  class << self
-    def paginate(**options)
-      new(defaults.merge(options)).call
-    end
+  def self.paginate(**options)
+    new(defaults.merge(options)).call
+  end
 
-    def defaults
-      { klass: Review, limit: 25, sort: "DESC", order: "created_at" }
-    end
+  def self.defaults
+    { klass: Review, limit: 25, sort: "DESC", order: "created_at" }
   end
 
   def call
