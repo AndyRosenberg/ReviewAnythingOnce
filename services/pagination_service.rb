@@ -12,11 +12,10 @@ class PaginationService < Service
   end
 
   private
-  attr_accessor :klass, :limit, :sort, :order, 
-                :where, :before, :cursor
 
   def page
-    @page ||= query.where("id #{direction} ?", cursor?).limit(limit).order("#{order} #{sort}")
+    @page ||= query.where("id #{direction} ?", cursor?)
+              .limit(limit).order("#{order} #{sort}")
   end
 
   def navigation
@@ -50,4 +49,6 @@ class PaginationService < Service
   def ascending?
     sort == "ASC"
   end
+
+  attr_accessor :klass, :limit, :sort, :order, :where, :before, :cursor
 end
