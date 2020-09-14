@@ -22,12 +22,15 @@ class UsersController < Roda
     r.on Integer do |id|
       r.is do
         r.get do
-          show_user = User.find_by_id(id)
-          unless user
+          @user_json = User.find_by_id(id)&.to_json
+
+          unless @user_json
             flash["message"] = "Unauthorized to view this user."
             r.redirect("/")
           end
-          # insert view
+
+          get_paginated_reviews(r, id)
+          view("users/show")
         end
 
         r.put do
@@ -69,6 +72,13 @@ class UsersController < Roda
         @current_user_json = user.to_json
         view('users/edit')
       end
+
+      r.get "reviews" do
+        api_only(r)
+        render_json(
+          get_paginated_reviews(r, id)
+        )
+      end
     end
   end
 
@@ -92,5 +102,12 @@ class UsersController < Roda
     flash_ar_errors(user)
     @current_user_json = user.to_json
     view('users/edit')
+  end
+
+  def get_paginated_reviews(r, id)
+    @user_reviews_json = PaginationService.paginate(
+      where: ["user_id = ?", id],
+      cursor: r.params["after"]
+    )
   end
 end

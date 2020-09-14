@@ -50,5 +50,6 @@ class PaginationService < Service
     sort == "ASC"
   end
 
-  attr_accessor :klass, :limit, :sort, :order, :where, :before, :cursor
+  attr_accessor :klass, :limit, :sort, :order,
+                :where, :before, :cursor
 end
