@@ -92,15 +92,6 @@ class ReviewsController < Roda
     )
   end
 
-  def background_upload(r, review)
-    PhotoUploadJob.perform_async(
-      "key" => r.params["img_name"],
-      "body" => r.params["img_body"],
-      "object_id" => review.id,
-      "object_type" => "Review"
-    )
-  end
-
   def floatable?(rating)
     rating.to_f.to_s == rating
   end
