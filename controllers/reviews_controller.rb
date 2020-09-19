@@ -48,33 +48,44 @@ class ReviewsController < Roda
     end
 
     r.on Integer do |id|
+      review = Review.find_by_id(id)
+      unauthorized_redirect(r, "access") unless review
+
       r.is do
         r.get do
-          show_review = Review.find_by_id(id)
-          unless show_review
-            flash["message"] = "Unauthorized to view this review."
-            r.redirect("/")
-          end
-          @review_json = show_review.to_json_with_photo_ids
+          @review_json = review.to_json_with_photo_ids
           view("reviews/show")
         end
 
         r.put do
-          # update
+          redirect_unless_match(r, "update", review)
         end
 
         r.delete do
-          # destroy
+          redirect_unless_match(r, "delete", review)
         end
       end
 
       r.get "edit" do
-        # edit
+        redirect_unless_match(r, "edit", review)
       end
     end
   end
 
   private
+
+  def redirect_unless_match(r, action, review)
+    unauthorized_redirect(r, action) unless current_user_review?(review)
+  end
+
+  def unauthorized_redirect(r, action)
+    flash["message"] = "Unauthorized to #{action} this review."
+    r.redirect("/")
+  end
+
+  def current_user_review?(review)
+    review.user_id == session["current_user_id"].to_i
+  end
 
   def review_params(r)
     r.params.slice("product", "rating", "body")
