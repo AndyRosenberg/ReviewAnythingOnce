@@ -53,12 +53,22 @@ class ReviewsController < Roda
 
       r.is do
         r.get do
-          @review_json = review.to_json_with_photo_ids
+          @review_json = review.to_json_with_current_status(
+                           current_user_review?(review)
+                         )
           view("reviews/show")
         end
 
         r.put do
           redirect_unless_match(r, "update", review)
+          if review.update(review_params(r))
+            flash["message"] = "Review has been updated!"
+            r.redirect("/reviews/#{id}")
+          else
+            flash_ar_errors(review)
+            @review_json = review.to_json
+            view('reviews/edit')
+          end
         end
 
         r.delete do
@@ -68,6 +78,8 @@ class ReviewsController < Roda
 
       r.get "edit" do
         redirect_unless_match(r, "edit", review)
+        @review_json = review.to_json
+        view("reviews/edit")
       end
     end
   end

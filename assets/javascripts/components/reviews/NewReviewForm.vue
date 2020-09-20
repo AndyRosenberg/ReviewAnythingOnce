@@ -19,12 +19,7 @@
                     </div>
                   </div>
 
-                  <div>
-                    <label for="rating" class="label has-text-white">Rating</label>
-                    <input class="input" name="rating" type="number" v-model="rating" min="0.0" max="10.0" step=".1" @change="ensureFloat">
-                    <input class="slider is-fullwidth is-large is-primary is-circle" v-model="rating" step=".1"
-                      min="0.0" max="10.0" value="5.0" type="range" @change="ensureFloat">
-                  </div>
+                  <RatingSlider initialRating="5.0" />
 
                   <div class="field">
                     <label for="body" class="label has-text-white">Review</label>
@@ -85,10 +80,12 @@
 
 <script>
   import ImageUploader from 'vue-image-upload-resize';
+  import RatingSlider from './RatingSlider.vue';
 
   export default {
     components: {
       ImageUploader,
+      RatingSlider,
     },
     data() {
       return {

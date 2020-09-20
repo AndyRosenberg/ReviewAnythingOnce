@@ -4,6 +4,7 @@
       <Photo :id="photo_id" />
       <div class="media-content">
         <div class="content column is-10">
+          <a class="is-pulled-right button is-light" v-if="review.current" :href="editUrl">Edit Review</a>
           <h3 class="has-text-white">{{this.review.product}}</h3>
           <p class="has-text-white is-size-2 mb-3"><strong class="has-text-white">{{this.review.rating}}</strong> <small>out of</small> 10</p>
           <p>
@@ -23,14 +24,17 @@
     components: { Photo },
     data() {
       return {
-        csrf: document.querySelector('meta[name=_csrf]').content,
         review: {},
-        photo_id: 0
+        photo_id: 0,
+        editUrl: ""
       };
     },
     created() {
       this.review = JSON.parse(this.shownReview)
       this.photo_id = this.review["photo_ids"][0];
+      if (this.review.current) {
+        this.editUrl = `/reviews/${this.review.id}/edit`
+      }
     }
   }
 </script>

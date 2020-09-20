@@ -7,6 +7,7 @@ import ResetPW from './logins/Reset.vue';
 import NewReviewForm from './reviews/NewReviewForm.vue';
 import ReviewIndex from './reviews/ReviewIndex.vue';
 import ShowReview from './reviews/ShowReview.vue';
+import EditReviewForm from './reviews/EditReviewForm.vue';
 
 export default {
   'new-user-form': NewUserForm,
@@ -15,6 +16,7 @@ export default {
   'new-review-form': NewReviewForm,
   'review-index': ReviewIndex,
   'show-review': ShowReview,
+  'edit-review-form': EditReviewForm,
   'sign-in': SignIn,
   'forgot-password': ForgotPW,
   'reset-password': ResetPW,
