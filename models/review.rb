@@ -1,7 +1,7 @@
 class Review < ActiveRecord::Base
   include PgSearch::Model
   belongs_to :user
-  has_many :photos, as: :photoable
+  has_many :photos, as: :photoable, dependent: :destroy
   pg_search_scope :similar_to,
                   against: :product,
                   using: :trigram

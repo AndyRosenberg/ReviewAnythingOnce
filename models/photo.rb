@@ -2,6 +2,7 @@ class Photo < ActiveRecord::Base
   attr_accessor :uploaded
   belongs_to :photoable, :polymorphic => true
   validate :has_uploaded?, on: :create
+  before_destroy :delete_from_s3
   
   def upload(body)
     begin
@@ -25,13 +26,25 @@ class Photo < ActiveRecord::Base
 
     begin
       photo_body = client.get_object({
-        bucket: ENV["AWS_BUCKET"], 
-        key: key, 
+        bucket: ENV["AWS_BUCKET"],
+        key: key,
       }).body.read
 
       Sidekiq.cache_set("photo_#{id}", photo_body)
       photo_body
     rescue StandardError => e
+      false
+    end
+  end
+
+  def delete_from_s3
+    begin
+      client.delete_object({
+        bucket: ENV["AWS_BUCKET"], 
+        key: key, 
+      }).error
+    rescue StandardError => e
+      errors.add(:key, "Unable to delete from S3")
       false
     end
   end

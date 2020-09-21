@@ -73,6 +73,14 @@ class ReviewsController < Roda
 
         r.delete do
           redirect_unless_match(r, "delete", review)
+          if review.destroy
+            flash["message"] = "Review successfully deleted."
+            r.redirect("/users/#{review.user_id}")
+          else
+            flash_ar_errors(review)
+            @review_json = review.to_json
+            view('reviews/edit')
+          end
         end
       end
 
