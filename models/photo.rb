@@ -40,8 +40,8 @@ class Photo < ActiveRecord::Base
   def delete_from_s3
     begin
       client.delete_object({
-        bucket: ENV["AWS_BUCKET"], 
-        key: key, 
+        bucket: ENV["AWS_BUCKET"],
+        key: key,
       }).error
     rescue StandardError => e
       errors.add(:key, "Unable to delete from S3")
